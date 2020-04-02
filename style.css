@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    user-select: none; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#main {
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+}
+
+#addinformation {
+    width: 336px;
+    min-height: 236px;
+}
+
+.header {
+    width: 100%;
+    height: 27px;
+    background: #ffdc40;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.banner {
+    text-align: center;
+}
+
+.menu {
+    padding: 0 30px;
+}
+
+.sort {
+    margin-right: 0;
+    margin-left: auto;
+    width: 20px;
+}
+.activ{
+    transform: rotate(180deg);
+}
+.fa-sort-amount-down{
+    color:#C4C4C4;
+}
+.fa-sort-amount-down:hover {
+    color:#000000;
+}
+.creatToDoList {
+    background: white;
+    margin: 5px 0;
+    border: 1px solid #E5E5E5;
+    border-radius: 15px;
+}
+
+.readyToDoList {
+    display: flex;
+    width: 274px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+}
+
+.readyToDoList.dragging {
+    background-color:#FFDC40;
+}
+
+.toDo {
+    width: 200px;
+    font-size: 1.5em;
+    border:none;
+    height: 38px;
+    outline-color: #ffdc40;
+}
+
+.fa-times-circle{
+    color: #C4C4C4;
+}
+.fa-times-circle:hover{
+    color: #833AE0;
+}
+.pointscheck:hover{
+    background:#833AE0;
+    height: 18px;
+}
+.pointscheck img{
+    user-select: none; 
+}
+
+.addToDo {
+    width: 150px;
+    height: 42px;
+    background: #833AE0;
+    margin: 10px auto;
+    border-radius: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.plus {
+    position: absolute;
+    background: #9953F1;
+    width: 40px;
+    height: 100%;
+    padding: 10px 5px;
+    border-radius: 180px;
+    font-size: 1em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.addInfo {
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    height: 90%;
+    background-color: #833AE0;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    border: none;
+    outline-color:none;
+    cursor: pointer;
+}
