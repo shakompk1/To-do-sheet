@@ -65,6 +65,7 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 40px;
+    user-select: none; 
 }
 
 .readyToDoList.dragging {

@@ -17,7 +17,6 @@ function createElement() {
     let delet = document.createElement('i');
     // Добовление данных в элементы
     points.src = 'img/points.svg';
-    readyToDoList.draggable = "true";
     // Добовление классов элементам 
     readyToDoList.classList.add('readyToDoList');
     pointscheck.classList.add('pointscheck');
@@ -77,20 +76,22 @@ function sortValues() {
 //Функция запуска движения
 function moveToDoElement() {
     //Перебор кнопки полсе которой должно начаться движение
-    pointscheck.forEach((pointscheck,i) => {
+    pointscheck.forEach((pointscheck, i) => {
         //Добовления класса поднятым элементам 
         let toDo = document.querySelectorAll('.toDo');
         pointscheck.addEventListener('dragstart', () => {
             pointscheck.parentNode.classList.add('dragging');
             toDo[i].style.backgroundColor = "#FFDC40";
+            toDo[i].parentNode.draggable = "true";
         });
         //Удаление класса опущеным элементам 
         pointscheck.addEventListener('dragend', () => {
             pointscheck.parentNode.classList.remove('dragging')
             toDo[i].style.backgroundColor = "white";
+            toDo[i].parentNode.draggable = "false";
         });
     });
-    
+
     creatToDoList.addEventListener('dragover', e => {
         e.preventDefault();
         let afterElement = getDragAfterElements(creatToDoList, e.clientY)
@@ -98,12 +99,12 @@ function moveToDoElement() {
         if (afterElement == null) {
             creatToDoList.appendChild(draggable);
         } else {
-            creatToDoList.insertBefore(draggable,afterElement)
+            creatToDoList.insertBefore(draggable, afterElement);
         }
     });
 }
 function getDragAfterElements(creatToDoList, y) {
-    let draggableElements = [...creatToDoList.querySelectorAll('.readyToDoList:not(.dragging)')]
+    let draggableElements = [...creatToDoList.querySelectorAll('.readyToDoList:not(.dragging)')];
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect()
         const offset = y - box.top - box.height / 2
@@ -113,4 +114,4 @@ function getDragAfterElements(creatToDoList, y) {
             return closest
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element;
-}
+};
