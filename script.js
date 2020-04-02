@@ -63,10 +63,18 @@ function sortValues() {
     //Проверка на вид сортировки 
     if (!sort.classList.contains('activ')) {
         sort.classList.toggle('activ')
-        newToDoValueArr.sort()
+        if (isNaN(toDoValue.value)) {
+            newToDoValueArr.sort();
+        } else {
+            newToDoValueArr.sort((a, b) => a - b);
+        };
     } else {
         sort.classList.toggle('activ')
-        newToDoValueArr.sort((a, b) => b - a)
+        if (isNaN(toDoValue.value)) {
+            newToDoValueArr.reverse();
+        } else {
+            newToDoValueArr.sort((a, b) => b - a);
+        }
     };
     //Запуск сортировки
     toDoValue.forEach((item, i) => {
