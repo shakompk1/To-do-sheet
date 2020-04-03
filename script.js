@@ -110,7 +110,7 @@ function moveToDoElement() {
             creatToDoList.insertBefore(draggable, afterElement);
         }
     });
-};
+}
 
 function getDragAfterElements(creatToDoList, y) {
     let draggableElements = [...creatToDoList.querySelectorAll('.readyToDoList:not(.dragging)')];
