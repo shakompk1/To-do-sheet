@@ -96,7 +96,7 @@ function moveToDoElement() {
         pointscheck.addEventListener('dragend', () => {
             pointscheck.parentNode.classList.remove('dragging')
             toDo[i].style.backgroundColor = "white";
-            toDo[i].parentNode.draggable = "false";
+            toDo[i].parentNode.draggable = "";
         });
     });
 
@@ -110,7 +110,8 @@ function moveToDoElement() {
             creatToDoList.insertBefore(draggable, afterElement);
         }
     });
-}
+};
+
 function getDragAfterElements(creatToDoList, y) {
     let draggableElements = [...creatToDoList.querySelectorAll('.readyToDoList:not(.dragging)')];
     return draggableElements.reduce((closest, child) => {
